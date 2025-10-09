@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, Github, Linkedin, Mail, Download, Code2 } from 'lucide-react';
 import { BorderBeam } from "@/components/lightswind/border-beam";
+import LightweightBubbles from './LightweightBubbles';
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
@@ -68,6 +69,9 @@ const Hero = () => {
 
   return (
     <section className="hero-section">
+      {/* Lightweight Bubble Particles */}
+      <LightweightBubbles />
+      
       {/* Background Elements */}
       <div className="hero-bg">
         <div className="hero-bg-element"></div>

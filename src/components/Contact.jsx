@@ -146,6 +146,8 @@ const Contact = () => {
                     <a
                       key={social.label}
                       href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="p-3 glass-effect rounded-lg hover:bg-white/15 transition-all duration-300 group"
                       aria-label={social.label}
                     >

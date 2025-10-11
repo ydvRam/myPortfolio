@@ -49,7 +49,7 @@ const Projects = () => {
       description: "A beautiful and modern gardening platform that helps users discover, plan, and manage their gardens. Features plant identification, garden planning tools, seasonal planting guides, and community features for garden enthusiasts.",
       image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop&crop=center",
       technologies: ["React", "Netlify", "CSS3", "JavaScript", "Responsive Design"],
-      github: "https://github.com/ydvRam/gardenlly",
+      github: null,
       live: "https://gardenlly.netlify.app/",
       category: "Frontend"
     }
@@ -108,15 +108,17 @@ const Projects = () => {
                       {/* Overlay on hover */}
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div className="flex space-x-4">
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-3 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300"
-                            aria-label="View on GitHub"
-                          >
-                            <Github className="w-5 h-5 text-white" />
-                          </a>
+                          {project.github && (
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="p-3 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300"
+                              aria-label="View on GitHub"
+                            >
+                              <Github className="w-5 h-5 text-white" />
+                            </a>
+                          )}
                           <a
                             href={project.live}
                             target="_blank"
@@ -130,24 +132,8 @@ const Projects = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="flex items-center justify-between mb-2">
+                      <div className="mb-2">
                         <span className="text-sm text-blue-400 font-medium">{project.category}</span>
-                        <div className="flex space-x-2">
-                          <a
-                            href={project.github}
-                            className="p-1 text-gray-400 hover:text-white transition-colors duration-300"
-                            aria-label="GitHub"
-                          >
-                            <Github className="w-4 h-4" />
-                          </a>
-                          <a
-                            href={project.live}
-                            className="p-1 text-gray-400 hover:text-white transition-colors duration-300"
-                            aria-label="Live Demo"
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
-                        </div>
                       </div>
                       <h4 className="text-lg font-bold text-white mb-2">{project.title}</h4>
                       <p className="text-gray-300 text-sm leading-relaxed mb-3">

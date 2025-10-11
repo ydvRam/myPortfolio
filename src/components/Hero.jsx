@@ -139,7 +139,7 @@ const Hero = () => {
                 </a>
                 <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                   <Code2 className="w-4 h-4" />
-                  <span>Review My Resume</span>
+                  <span>Resume</span>
                   <BorderBeam 
                     colorFrom="#8b5cf6"
                     colorTo="#3b82f6"

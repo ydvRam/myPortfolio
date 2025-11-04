@@ -9,7 +9,7 @@ const Hero = () => {
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   
-  const words = [' Full Stack Developer', ' Problem Solver', ' Tech Enthusiast'];
+  const words = ['Full Stack Developer ', 'Problem Solver ', 'Tech Enthusiast '];
   
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -66,6 +66,19 @@ const Hero = () => {
     { icon: Linkedin, href: 'https://www.linkedin.com/in/ramyadav7457/', label: 'LinkedIn' },
     { icon: Mail, href: '#contact', label: 'Email' },
   ];
+
+  const handleResumeClick = (e) => {
+    e.preventDefault();
+    // Open in new tab
+    window.open('/Resume.pdf', '_blank', 'noopener,noreferrer');
+    // Also trigger download
+    const link = document.createElement('a');
+    link.href = '/Resume.pdf';
+    link.download = 'Ram_Pratap_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section className="hero-section">
@@ -137,7 +150,11 @@ const Hero = () => {
                     beamBorderRadius={8}
                   />
                 </a>
-                <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <a 
+                  href="/Resume.pdf" 
+                  onClick={handleResumeClick}
+                  className="relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
                   <Code2 className="w-4 h-4" />
                   <span>Resume</span>
                   <BorderBeam 

@@ -49,8 +49,8 @@ const Projects = () => {
       description: "A beautiful and modern gardening platform that helps users discover, plan, and manage their gardens. Features plant identification, garden planning tools, seasonal planting guides, and community features for garden enthusiasts.",
       image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop&crop=center",
       technologies: ["React", "Netlify", "CSS3", "JavaScript", "Responsive Design"],
-      github: null,
-      live: "https://gardenlly.netlify.app/",
+      github: "https://github.com/ydvRam/gradenally",
+      live: "https://gardenally.netlify.app/",
       category: "Frontend"
     }
   ];

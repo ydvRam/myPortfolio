@@ -108,7 +108,7 @@ const Hero = () => {
                   <span className="gradient-text">Ram Pratap</span>
                 </h1>
             <div className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 font-medium font-heading">
-              <span className="inline-block">And I'm </span>
+              <span className="inline-block">And I'm&nbsp;</span>
               <span className="inline-block text-blue-500 dark:text-blue-400 font-semibold font-typewriter">
                 {currentText}
                 <motion.span

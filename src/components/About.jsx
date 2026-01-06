@@ -49,43 +49,43 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-12 sm:py-16 md:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="space-y-16"
+          className="space-y-10 sm:space-y-12 md:space-y-16"
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">
+          <motion.div variants={itemVariants} className="text-center space-y-3 sm:space-y-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text px-2">
               About Me
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
               A passionate developer dedicated to creating exceptional digital experiences
             </p>
           </motion.div>
 
           {/* Main Content */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
             {/* Left Side - Profile Image */}
-            <motion.div variants={itemVariants} className="flex justify-center lg:justify-start">
+            <motion.div variants={itemVariants} className="flex justify-center lg:justify-start order-2 lg:order-1">
               <div className="relative">
                 {/* Simplified Background Circle */}
                 <div 
                   className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-full opacity-20"
                   style={{
-                    width: '420px',
-                    height: '420px',
+                    width: 'clamp(280px, 80vw, 420px)',
+                    height: 'clamp(280px, 80vw, 420px)',
                     transform: 'rotate(-15deg)',
                     transformOrigin: 'center'
                   }}
                 />
 
                 {/* Main Profile Container */}
-                <div className="relative w-96 h-96 lg:w-[380px] lg:h-[380px]">
+                <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[380px] lg:h-[380px]">
                   <div 
                     className="w-full h-full rounded-full overflow-hidden border-4 border-white/20 shadow-2xl"
                     style={{
@@ -122,16 +122,16 @@ const About = () => {
             </motion.div>
 
             {/* Right Side - Description and Cards */}
-            <motion.div variants={itemVariants} className="space-y-8">
+            <motion.div variants={itemVariants} className="space-y-6 sm:space-y-8 order-1 lg:order-2">
               {/* Description */}
-              <div className="space-y-6">
-                <h3 className="text-3xl font-bold text-gray-900 dark:text-white">
+              <div className="space-y-4 sm:space-y-6">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white leading-tight px-2">
                   I'm <span className="gradient-text">Ram Pratap</span>, a passionate full-stack developer who loves creating interactive, user-friendly web applications that solve real-world problems.
                 </h3>
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed px-2">
                   With expertise in <span className="text-blue-500 font-semibold">React</span>, <span className="text-blue-500 font-semibold">Node.js</span>, <span className="text-blue-500 font-semibold">MongoDB</span>, and <span className="text-blue-500 font-semibold">Tailwind CSS</span>, I'm always eager to learn new technologies and deliver scalable, efficient solutions.
                 </p>
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed px-2">
                   I believe in writing clean, maintainable code and creating seamless user experiences that make a positive impact on people's lives.
                 </p>
               </div>

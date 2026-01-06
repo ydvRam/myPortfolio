@@ -133,27 +133,27 @@ const Skills = memo(() => {
   ];
 
   return (
-    <section id="skills" className="py-20 relative">
+    <section id="skills" className="py-12 sm:py-16 md:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="space-y-16"
+          className="space-y-10 sm:space-y-12 md:space-y-16"
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">
+          <motion.div variants={itemVariants} className="text-center space-y-3 sm:space-y-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text px-2">
               Skills & Technologies
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
               Here are the technologies and tools I work with to bring ideas to life
             </p>
           </motion.div>
 
           {/* Skills Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 max-w-6xl mx-auto">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -165,14 +165,14 @@ const Skills = memo(() => {
                 whileTap={{ scale: 0.95 }}
                 className="group relative"
               >
-                <div className="bg-gray-800/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 h-32 flex flex-col items-center justify-center space-y-3 border border-gray-700/50 hover:bg-gray-800/90 dark:hover:bg-gray-900/90 transition-all duration-300">
+                <div className="bg-gray-800/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 h-28 sm:h-32 flex flex-col items-center justify-center space-y-2 sm:space-y-3 border border-gray-700/50 hover:bg-gray-800/90 dark:hover:bg-gray-900/90 transition-all duration-300">
                   {/* Logo */}
-                  <div className="transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="transform group-hover:scale-110 transition-transform duration-300 scale-90 sm:scale-100">
                     {skill.icon}
                   </div>
                   
                   {/* Name */}
-                  <h3 className="text-white text-sm font-medium text-center leading-tight">
+                  <h3 className="text-white text-xs sm:text-sm font-medium text-center leading-tight">
                     {skill.name}
                   </h3>
                 </div>

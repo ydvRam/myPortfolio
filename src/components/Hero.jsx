@@ -91,23 +91,23 @@ const Hero = () => {
         <div className="hero-bg-element"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-12 sm:py-16 md:py-20">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
 
           {/* Main Heading */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <div className="text-2xl md:text-3xl lg:text-4xl text-gray-600 dark:text-gray-300 font-medium">
+          <motion.div variants={itemVariants} className="space-y-3 sm:space-y-4">
+            <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-600 dark:text-gray-300 font-medium px-2">
               Hello, I'm
             </div>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-display">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold font-display px-2">
                   <span className="gradient-text">Ram Pratap</span>
                 </h1>
-            <div className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 font-medium font-heading">
+            <div className="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 font-medium font-heading px-2">
               <span className="inline-block">And I'm&nbsp;</span>
               <span className="inline-block text-blue-500 dark:text-blue-400 font-semibold font-typewriter">
                 {currentText}
@@ -123,14 +123,14 @@ const Hero = () => {
           </motion.div>
 
           {/* Description */}
-          <motion.p variants={itemVariants} className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
             Passionate about creating innovative web solutions and building scalable applications. 
             I love turning complex problems into simple, beautiful, and intuitive designs.
           </motion.p>
 
               {/* CTA Buttons */}
-              <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#projects" className="relative inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300">
+              <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+                <a href="#projects" className="relative inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-transparent border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm sm:text-base font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300 w-full sm:w-auto justify-center">
                   <span>View My Work</span>
                   <ChevronDown className="w-4 h-4" />
                   <BorderBeam 
@@ -140,7 +140,7 @@ const Hero = () => {
                     beamBorderRadius={8}
                   />
                 </a>
-                <a href="#contact" className="relative inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300">
+                <a href="#contact" className="relative inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-transparent border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm sm:text-base font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300 w-full sm:w-auto justify-center">
                   <Download className="w-4 h-4" />
                   <span>Get In Touch</span>
                   <BorderBeam 
@@ -153,7 +153,7 @@ const Hero = () => {
                 <a 
                   href="/Resume.pdf" 
                   onClick={handleResumeClick}
-                  className="relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="relative inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm sm:text-base font-medium rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto justify-center"
                 >
                   <Code2 className="w-4 h-4" />
                   <span>Resume</span>
@@ -167,7 +167,7 @@ const Hero = () => {
               </motion.div>
 
           {/* Social Links */}
-          <motion.div variants={itemVariants} className="flex justify-center space-x-6 pt-8">
+          <motion.div variants={itemVariants} className="flex justify-center space-x-4 sm:space-x-6 pt-6 sm:pt-8">
             {socialLinks.map((social, index) => (
               <a
                 key={social.label}
@@ -188,10 +188,10 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="scroll-indicator">
-        <span className="text-sm">Scroll Down</span>
+      <div className="scroll-indicator hidden sm:flex">
+        <span className="text-xs sm:text-sm">Scroll Down</span>
         <div className="scroll-arrow">
-          <ChevronDown className="w-5 h-5" />
+          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5" />
         </div>
       </div>
     </section>

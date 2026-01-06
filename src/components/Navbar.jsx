@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Code, User, Briefcase, Mail } from 'lucide-react';
+import { Menu, X, Code, User, Briefcase, Mail, Download } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,12 +13,26 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleResumeClick = (e) => {
+    e.preventDefault();
+    // Open in new tab
+    window.open('/Resume.pdf', '_blank', 'noopener,noreferrer');
+    // Also trigger download
+    const link = document.createElement('a');
+    link.href = '/Resume.pdf';
+    link.download = 'Ram_Pratap_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const navItems = [
     { name: 'Home', href: '#', icon: Code },
     { name: 'About', href: '#about', icon: User },
     { name: 'Skills', href: '#skills', icon: Code },
     { name: 'Projects', href: '#projects', icon: Briefcase },
     { name: 'Contact', href: '#contact', icon: Mail },
+    { name: 'Resume', href: '/Resume.pdf', icon: Download, isResume: true },
   ];
 
   return (
@@ -27,18 +41,19 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <Code className="w-5 h-5 text-white" />
+            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <Code className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
             </div>
-            <span className="text-xl font-bold gradient-text">Ram Pratap</span>
+            <span className="text-lg sm:text-xl font-bold gradient-text">Ram Pratap</span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
+                onClick={item.isResume ? handleResumeClick : undefined}
                 className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-white transition-colors duration-300 group"
               >
                 <item.icon className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
@@ -66,7 +81,12 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    if (item.isResume) {
+                      handleResumeClick(e);
+                    }
+                    setIsOpen(false);
+                  }}
                   className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors duration-300 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <item.icon className="w-5 h-5" />

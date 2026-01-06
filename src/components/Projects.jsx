@@ -56,35 +56,35 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 relative">
-      <div className="max-w-7xl mx-auto section-padding">
+    <section id="projects" className="py-12 sm:py-16 md:py-20 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="space-y-16"
+          className="space-y-10 sm:space-y-12 md:space-y-16"
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">
+          <motion.div variants={itemVariants} className="text-center space-y-3 sm:space-y-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text px-2">
               Projects
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
               Here are some of my recent projects that showcase my skills and passion for development
             </p>
           </motion.div>
 
           {/* Projects */}
-          <motion.div variants={itemVariants} className="space-y-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div variants={itemVariants} className="space-y-6 sm:space-y-8">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {projects.map((project) => (
                 <motion.div
                   key={project.title}
                   variants={itemVariants}
-                  className="glass-effect p-6 rounded-xl hover:bg-white/15 transition-all duration-300 group"
+                  className="glass-effect p-4 sm:p-6 rounded-xl hover:bg-white/15 transition-all duration-300 group"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-3 sm:space-y-4">
                     <div className="aspect-video bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-lg overflow-hidden relative group">
                       <img 
                         src={project.image} 
@@ -133,10 +133,10 @@ const Projects = () => {
                     </div>
                     <div>
                       <div className="mb-2">
-                        <span className="text-sm text-blue-400 font-medium">{project.category}</span>
+                        <span className="text-xs sm:text-sm text-blue-400 font-medium">{project.category}</span>
                       </div>
-                      <h4 className="text-lg font-bold text-white mb-2">{project.title}</h4>
-                      <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                      <h4 className="text-base sm:text-lg font-bold text-white mb-2">{project.title}</h4>
+                      <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-3">
                         {project.description}
                       </p>
                       <div className="flex flex-wrap gap-1">
@@ -163,17 +163,18 @@ const Projects = () => {
             {/* More Projects Button */}
             <motion.div 
               variants={itemVariants} 
-              className="text-center mt-12"
+              className="text-center mt-8 sm:mt-12 px-4"
             >
               <a
                 href="https://github.com/ydvRam"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm sm:text-base font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                <Github className="w-5 h-5" />
-                <span>View More Projects on GitHub</span>
-                <ExternalLink className="w-4 h-4" />
+                <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="hidden sm:inline">View More Projects on GitHub</span>
+                <span className="sm:hidden">View More on GitHub</span>
+                <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
               </a>
             </motion.div>
           </motion.div>
